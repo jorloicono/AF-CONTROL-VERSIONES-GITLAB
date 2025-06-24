@@ -1,4 +1,4 @@
-# Laboratorio: Estado de Archivos en Git
+# Estado de Archivos en Git
 
 ## 1. Inicialización del Proyecto
 
