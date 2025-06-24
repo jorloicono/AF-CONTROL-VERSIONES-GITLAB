@@ -1,6 +1,8 @@
 # Usando Git Log
 
-## Inicialización de un Repositorio
+Para ver eficazmente tu historial de confirmaciones en Git, utilizarás principalmente el comando `git log`. Este comando es muy versátil y ofrece numerosas opciones para adaptar su salida a tus necesidades específicas.
+
+### Inicialización de un Repositorio
 
 Antes de poder ver el historial de confirmaciones, necesitas un repositorio Git. Si no tienes uno, puedes:
 
@@ -17,16 +19,16 @@ Antes de poder ver el historial de confirmaciones, necesitas un repositorio Git.
     ```bash
     git clone https://github.com/schacon/simplegit-progit
     ```
-    [cite\_start]Clonar un repositorio te proporciona automáticamente su historial completo de confirmaciones[cite: 2].
+    Clonar un repositorio te proporciona automáticamente su historial completo de confirmaciones.
 
 ### Uso Básico de `git log`
 
-[cite\_start]Por defecto, cuando ejecutas `git log` sin ningún parámetro, lista las confirmaciones en orden cronológico inverso, lo que significa que las confirmaciones más recientes aparecen primero[cite: 4]. Cada entrada de confirmación muestra la siguiente información:
+Por defecto, cuando ejecutas `git log` sin ningún parámetro, lista las confirmaciones en orden cronológico inverso, lo que significa que las confirmaciones más recientes aparecen primero. Cada entrada de confirmación muestra la siguiente información:
 
-  * [cite\_start]**Suma de comprobación SHA-1:** Un identificador único para la confirmación[cite: 5].
-  * [cite\_start]**Autor:** El nombre y la dirección de correo electrónico de la persona que escribió el trabajo[cite: 5].
-  * [cite\_start]**Fecha:** La fecha y hora en que se realizó la confirmación[cite: 5].
-  * [cite\_start]**Mensaje de confirmación:** Una descripción de los cambios introducidos por la confirmación[cite: 5].
+  * **Suma de comprobación SHA-1:** Un identificador único para la confirmación.
+  * **Autor:** El nombre y la dirección de correo electrónico de la persona que escribió el trabajo.
+  * **Fecha:** La fecha y hora en que se realizó la confirmación.
+  * **Mensaje de confirmación:** Una descripción de los cambios introducidos por la confirmación.
 
 **Ejemplo:**
 
@@ -53,55 +55,55 @@ Date: Sat Mar 15 10:31:28 2008 -0700
 
 ### Opciones Útiles de `git log` para Formatear la Salida
 
-[cite\_start]`git log` ofrece una variedad de opciones para personalizar el formato de su salida[cite: 6, 7].
+`git log` ofrece una variedad de opciones para personalizar el formato de su salida.
 
-  * [cite\_start]**`-p` o `--patch`**: Muestra el parche (las diferencias) introducido en cada confirmación[cite: 8]. [cite\_start]Esto es muy útil para revisiones de código o para visualizar rápidamente lo que ha sucedido en las confirmaciones enviadas por un colaborador[cite: 11].
+  * **`-p` o `--patch`**: Muestra el parche (las diferencias) introducido en cada confirmación. Esto es muy útil para revisiones de código o para visualizar rápidamente lo que ha sucedido en las confirmaciones enviadas por un colaborador.
 
     ```bash
     git log -p
     ```
 
-  * [cite\_start]**`-<n>`**: Muestra solo las últimas `n` confirmaciones[cite: 38].
+  * **`-<n>`**: Muestra solo las últimas `n` confirmaciones.
 
     ```bash
-    [cite_start]git log -p -2 # Muestra las últimas 2 confirmaciones con parches [cite: 8]
+    git log -p -2 # Muestra las últimas 2 confirmaciones con parches
     ```
 
-  * [cite\_start]**`--stat`**: Muestra estadísticas sobre los archivos modificados en cada confirmación, incluyendo el número de archivos cambiados y las líneas añadidas/eliminadas[cite: 13, 16].
+  * **`--stat`**: Muestra estadísticas sobre los archivos modificados en cada confirmación, incluyendo el número de archivos cambiados y las líneas añadidas/eliminadas.
 
     ```bash
     git log --stat
     ```
 
-  * [cite\_start]**`--pretty`**: Modifica el formato de la salida[cite: 17].
+  * **`--pretty`**: Modifica el formato de la salida.
 
-      * [cite\_start]**`oneline`**: Imprime cada confirmación en una única línea, lo que puede resultar útil si estás analizando gran cantidad de confirmaciones[cite: 18].
+      * **`oneline`**: Imprime cada confirmación en una única línea, lo que puede resultar útil si estás analizando gran cantidad de confirmaciones.
 
         ```bash
         git log --pretty=oneline
         ```
 
-      * [cite\_start]**`short`, `full`, `fuller`**: Muestran una salida similar con menos o más información, respectivamente[cite: 20].
+      * **`short`, `full`, `fuller`**: Muestran una salida similar con menos o más información, respectivamente.
 
-      * [cite\_start]**`format`**: Te permite especificar tu propio formato personalizado utilizando marcadores de posición[cite: 21]. [cite\_start]Esto es especialmente útil si estás generando una salida para que sea analizada por otro programa[cite: 21].
+      * **`format`**: Te permite especificar tu propio formato personalizado utilizando marcadores de posición. Esto es especialmente útil si estás generando una salida para que sea analizada por otro programa.
 
-        | Opción | [cite\_start]Descripción de la salida [cite: 22, 23, 24] |
+        | Opción | Descripción de la salida |
         | :----- | :------------------------------------------- |
-        | `%H` | [cite\_start]Hash de la confirmación [cite: 22] |
-        | `%h` | [cite\_start]Hash de la confirmación abreviado [cite: 22] |
-        | `%T` | [cite\_start]Hash del árbol [cite: 22] |
-        | `%t` | [cite\_start]Hash del árbol abreviado [cite: 22] |
-        | `%P` | [cite\_start]Hashes de las confirmaciones padre [cite: 22] |
-        | `%p` | [cite\_start]Hashes de las confirmaciones padre abreviados [cite: 22] |
-        | `%an` | [cite\_start]Nombre del autor [cite: 22] |
-        | `%ae` | [cite\_start]Dirección de correo del autor [cite: 22] |
-        | `%ad` | [cite\_start]Fecha de autoría (el formato respeta la opción `--date`) [cite: 22] |
-        | `%ar` | [cite\_start]Fecha de autoría, relativa [cite: 22] |
-        | `%cn` | [cite\_start]Nombre del confirmador [cite: 24] |
-        | `%ce` | [cite\_start]Dirección de correo del confirmador [cite: 24] |
-        | `%cd` | [cite\_start]Fecha de confirmación [cite: 24] |
-        | `%cr` | [cite\_start]Fecha de confirmación, relativa [cite: 24] |
-        | `%s` | [cite\_start]Asunto (título del mensaje de confirmación) [cite: 24] |
+        | `%H` | Hash de la confirmación |
+        | `%h` | Hash de la confirmación abreviado |
+        | `%T` | Hash del árbol |
+        | `%t` | Hash del árbol abreviado |
+        | `%P` | Hashes de las confirmaciones padre |
+        | `%p` | Hashes de las confirmaciones padre abreviados |
+        | `%an` | Nombre del autor |
+        | `%ae` | Dirección de correo del autor |
+        | `%ad` | Fecha de autoría (el formato respeta la opción `--date`) |
+        | `%ar` | Fecha de autoría, relativa |
+        | `%cn` | Nombre del confirmador |
+        | `%ce` | Dirección de correo del confirmador |
+        | `%cd` | Fecha de confirmación |
+        | `%cr` | Fecha de confirmación, relativa |
+        | `%s` | Asunto (título del mensaje de confirmación) |
 
         **Ejemplo usando `--pretty=format`:**
 
@@ -109,9 +111,9 @@ Date: Sat Mar 15 10:31:28 2008 -0700
         git log --pretty=format:"%h %an, %ar: %s"
         ```
 
-        [cite\_start]**Autor vs. Confirmador:** El autor es la persona que escribió originalmente el trabajo, mientras que el confirmador es quien lo aplicó[cite: 26]. [cite\_start]Por lo tanto, si envías un parche a un proyecto y uno de sus miembros lo aplica, ambos recibiréis reconocimiento: tú como autor y el miembro del proyecto como confirmador[cite: 27].
+        **Autor vs. Confirmador:** El autor es la persona que escribió originalmente el trabajo, mientras que el confirmador es quien lo aplicó. Por lo tanto, si envías un parche a un proyecto y uno de sus miembros lo aplica, ambos recibiréis reconocimiento: tú como autor y el miembro del proyecto como confirmador.
 
-  * [cite\_start]**`--graph`**: Añade un pequeño gráfico ASCII mostrando tu historial de ramificaciones y uniones[cite: 30]. [cite\_start]Esta opción es especialmente útil combinada con `oneline` o `format`[cite: 29].
+  * **`--graph`**: Añade un pequeño gráfico ASCII mostrando tu historial de ramificaciones y uniones. Esta opción es especialmente útil combinada con `oneline` o `format`.
 
     ```bash
     git log --pretty=format:"%h %s" --graph
@@ -119,42 +121,42 @@ Date: Sat Mar 15 10:31:28 2008 -0700
 
 ### Limitar la Salida de `git log`
 
-[cite\_start]Además del formateo, puedes limitar la salida de `git log` para mostrar solo un subconjunto de confirmaciones[cite: 36].
+Además del formateo, puedes limitar la salida de `git log` para mostrar solo un subconjunto de confirmaciones.
 
-  * [cite\_start]**`--since` o `--after`**: Muestra aquellas confirmaciones hechas después de la fecha especificada[cite: 40, 51]. [cite\_start]Puedes indicar una fecha concreta ("2008-01-15") o relativa ("hace 2 años, 1 día y 3 minutos")[cite: 42].
+  * **`--since` o `--after`**: Muestra aquellas confirmaciones hechas después de la fecha especificada. Puedes indicar una fecha concreta ("2008-01-15") o relativa ("hace 2 semanas", "hace 2 años, 1 día y 3 minutos").
     ```bash
-    [cite_start]git log --since="2.weeks" [cite: 41]
+    git log --since="2.weeks"
     ```
-  * [cite\_start]**`--until` o `--before`**: Muestra aquellas confirmaciones hechas antes de la fecha especificada[cite: 40, 51].
+  * **`--until` o `--before`**: Muestra aquellas confirmaciones hechas antes de la fecha especificada.
     ```bash
     git log --until="2008-01-15"
     ```
-  * [cite\_start]**`--author`**: Filtra las confirmaciones por autor, mostrando solo aquellas confirmaciones cuyo autor coincide con la cadena especificada[cite: 44, 51].
+  * **`--author`**: Filtra las confirmaciones por autor, mostrando solo aquellas confirmaciones cuyo autor coincide con la cadena especificada.
     ```bash
     git log --author="Scott Chacon"
     ```
-  * [cite\_start]**`--committer`**: Muestra solo aquellas confirmaciones cuyo confirmador coincide con la cadena especificada[cite: 51].
+  * **`--committer`**: Muestra solo aquellas confirmaciones cuyo confirmador coincide con la cadena especificada.
     ```bash
     git log --committer="John Doe"
     ```
-  * [cite\_start]**`--grep`**: Permite buscar palabras clave entre los mensajes de confirmación[cite: 44]. [cite\_start]Ten en cuenta que si quieres aplicar `--author` y `--grep` simultáneamente, tienes que añadir `--all-match`, o el comando mostrará las confirmaciones que cumplan cualquiera de las dos, no necesariamente las dos a la vez[cite: 45].
+  * **`--grep`**: Permite buscar palabras clave entre los mensajes de confirmación. Ten en cuenta que si quieres aplicar `--author` y `--grep` simultáneamente, tienes que añadir `--all-match`, o el comando mostrará las confirmaciones que cumplan cualquiera de las dos, no necesariamente las dos a la vez.
     ```bash
     git log --grep="bugfix"
     ```
-  * [cite\_start]**`-S <cadena>`**: Muestra solo aquellas confirmaciones que añaden o eliminan código que corresponda con la cadena especificada[cite: 46, 51]. [cite\_start]Por ejemplo, si quieres encontrar la última confirmación que añadió o eliminó una referencia a una función específica[cite: 46]:
+  * **`-S <cadena>`**: Muestra solo aquellas confirmaciones que añaden o eliminan código que corresponda con la cadena especificada. Por ejemplo, si quieres encontrar la última confirmación que añadió o eliminó una referencia a una función específica:
     ```bash
     git log -Sfunction_name
     ```
-  * [cite\_start]**`-- <ruta>`**: Limita la salida a aquellas confirmaciones que introdujeron un cambio en un directorio o archivo específico[cite: 47]. [cite\_start]Esta debe ser siempre la última opción y suele ir precedida de dos guiones (`--`) para separar la ruta del resto de opciones[cite: 48].
+  * **`-- <ruta>`**: Limita la salida a aquellas confirmaciones que introdujeron un cambio en un directorio o archivo específico. Esta debe ser siempre la última opción y suele ir precedida de dos guiones (`--`) para separar la ruta del resto de opciones.
     ```bash
     git log -- README.md
     ```
 
 ### Ejemplo Combinado
 
-[cite\_start]Para ver cuáles de las confirmaciones hechas sobre archivos de prueba del código fuente de Git fueron enviadas por Junio Hamano, y no fueron uniones, en el mes de octubre de 2008, ejecutarías algo así[cite: 52]:
+Para ver cuáles de las confirmaciones hechas sobre archivos de prueba del código fuente de Git fueron enviadas por Junio Hamano, y no fueron uniones, en el mes de octubre de 2008, ejecutarías algo así:
 
 ```bash
 git log --pretty="%h %s" --author="gitster" --since="2008-10-01" \
-[cite_start]--before="2008-11-01" --no-merges t/ [cite: 53]
+--before="2008-11-01" --no-merges t/
 ```
