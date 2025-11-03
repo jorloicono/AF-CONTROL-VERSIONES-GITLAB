@@ -9,7 +9,7 @@ Para usar el comando `git init` y crear un repositorio local en tu computadora, 
 
    ```bash
    git init
-```
+   ```
 
 Esto creará un nuevo repositorio Git en el directorio actual.
 
