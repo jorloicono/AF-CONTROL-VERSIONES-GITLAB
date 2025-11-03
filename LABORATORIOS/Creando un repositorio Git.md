@@ -9,7 +9,7 @@ Para usar el comando `git init` y crear un repositorio local en tu computadora, 
 
    ```bash
    git init
-````
+```
 
 Esto creará un nuevo repositorio Git en el directorio actual.
 
@@ -73,7 +73,3 @@ Git te permite usar distintos protocolos de transferencia. El ejemplo anterior u
 * `git://`
 * `usuario@servidor:ruta/del/repositorio.git` (protocolo SSH)
 
-
-
-¿Quieres que lo guarde como archivo `.md` también?
-```
