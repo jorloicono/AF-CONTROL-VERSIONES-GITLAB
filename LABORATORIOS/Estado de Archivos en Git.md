@@ -114,7 +114,7 @@ Changes not staged for commit:
 
 ---
 
-## 🔍 6. Ver Cambios con `git diff`
+## 6. Ver Cambios con `git diff`
 
 * Para ver cambios **no preparados**:
 
