@@ -1,10 +1,10 @@
-## Deshacer Cambios en Git
+## Deshacer cambios en Git
 
 En este laboratorio, exploraremos cómo deshacer diversas acciones en Git utilizando ejemplos prácticos. 
 Recuerda, siempre ten cuidado al deshacer, ya que a veces es difícil recuperar algo una vez deshecho. 
 Esta es una de las pocas áreas donde Git puede resultar en la pérdida de trabajo si cometes un error.
 
-### Laboratorio 1: Inicialización del Repositorio
+### Inicialización del Repositorio
 
 Primero, vamos a crear un nuevo directorio para nuestro laboratorio e inicializar un repositorio Git en él.
 
@@ -25,7 +25,7 @@ Initialized empty Git repository in /ruta/a/tu/directorio/git_lab/.git/
 
 Ahora estamos listos para empezar a trabajar con Git.
 
-### Laboratorio 2: Deshacer la Última Confirmación (`git commit --amend`)
+###  Deshacer la Última Confirmación (`git commit --amend`)
 
 [cite\_start]Imagina que confirmas un cambio antes de tiempo y olvidas agregar algún archivo, o te equivocas en el mensaje de confirmación[cite: 4]. [cite\_start]Si quieres rehacer la confirmación, puedes reconfirmar con la opción `--amend`[cite: 5].
 
@@ -75,7 +75,7 @@ git log --oneline
 
 Verás que solo hay una confirmación en el historial, y su mensaje es "Confirmación inicial con todos los archivos". [cite\_start]La segunda confirmación reemplaza el resultado de la primera[cite: 9].
 
-### Laboratorio 3: Deshacer un Archivo Preparado (`git reset HEAD <file>...`)
+### Deshacer un Archivo Preparado (`git reset HEAD <file>...`)
 
 [cite\_start]Las siguientes dos secciones demuestran cómo lidiar con los cambios de tu área de preparación y tu directorio de trabajo[cite: 10]. [cite\_start]Afortunadamente, el comando que usas para determinar el estado de esas dos áreas también te recuerda cómo deshacer los cambios en ellas[cite: 11].
 
@@ -141,7 +141,7 @@ Changes not staged for commit:
 
 [cite\_start]Ahora `archivo_2.txt` está modificado y, nuevamente, no preparado[cite: 17]. El `archivo_1.txt` sigue preparado.
 
-### Laboratorio 4: Deshacer un Archivo Modificado (`git checkout -- <file>...`)
+### Deshacer un Archivo Modificado (`git checkout -- <file>...`)
 
 [cite\_start]¿Qué tal si te das cuenta de que no quieres mantener los cambios de un archivo? [cite: 19] [cite\_start]¿Cómo puedes restaurarlo fácilmente al estado en el que estaba en la última confirmación? [cite: 20]
 
